@@ -20,13 +20,17 @@ HanziWriter.create('target-div', '私', {
   width: 400,
   height: 400,
   charDataLoader: (char, onLoad, onError) => {
-    fetch(`https://cdn.jsdelivr.net/npm/hanzi-writer-data-jp@0/${char}.json`)
+    fetch(`https://cdn.jsdelivr.net/gh/krmanik/hanzi-writer-data-jp@master/data/${char}.json`)
       .then(res => res.json())
       .then(onLoad)
       .catch(onError);
   }
 })
 ```
+
+## Update
+
+Added kana json from [ailectra/kana-json](https://github.com/ailectra/kana-json)
 
 ## Current limitations compared with the Chinese data
 - This data does not support radicals yet
